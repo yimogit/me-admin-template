@@ -1,6 +1,6 @@
 ## express-mockjs
 
-[express-mockjs](https://github.com/52cik/express-mockjs)是楼教主结合 `express+mock-lite` 构建的一个 mock 框架，可以快速的帮助我们在本地搭建一个 mock 服务器
+[express-mockjs](https://github.com/52cik/express-mockjs) 是楼教主结合 `express+mock-lite` 构建的一个 mock 框架，可以快速的帮助我们在本地搭建一个 mock 服务器
 
 相关资料：
 
@@ -10,11 +10,11 @@
 
 ### 安装 express-mockjs 到项目
 
-安装 express-mockjs(v0.4.9):`npm install express-mockjs --save-dev`
+安装 express-mockjs(v0.4.9): `npm install express-mockjs --save-dev`
 
 ### 安装 nodemon 到项目 以监听 mock 代码修改
 
-安装 nodemon(v1.17.4):`npm install nodemon --save-dev`
+安装 nodemon(v1.17.4): `npm install nodemon --save-dev`
 
 ### 新建 mock-server/index.js 编写启动服务器代码
 
@@ -112,11 +112,11 @@ module.exports = {
 
 ### 代码图示
 
-json 定义  
-![图片](https://dn-coding-net-production-pp.qbox.me/ffd4d952-6dca-451b-ac7c-5f3debb3b622.png)
+* json 定义  
+  ![图片](https://dn-coding-net-production-pp.qbox.me/ffd4d952-6dca-451b-ac7c-5f3debb3b622.png)
 
-package.json 配置  
-![图片](https://dn-coding-net-production-pp.qbox.me/483c3448-6fb1-4809-9145-906ad1165750.png)
+* package.json 配置  
+  ![图片](https://dn-coding-net-production-pp.qbox.me/483c3448-6fb1-4809-9145-906ad1165750.png)
 
-访问示例  
-![图片](https://dn-coding-net-production-pp.qbox.me/da2b2e00-004f-4208-981f-6d9a4cad4887.png)
+* 访问示例  
+  ![图片](https://dn-coding-net-production-pp.qbox.me/da2b2e00-004f-4208-981f-6d9a4cad4887.png)
