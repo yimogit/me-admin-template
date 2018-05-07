@@ -6,13 +6,14 @@
   "private": true,
   "scripts": {
     "dev":
-      "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
+      "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js --host 0.0.0.0 --port 5555",
     "start": "npm run dev",
     "unit": "jest --config test/unit/jest.conf.js --coverage",
     "e2e": "node test/e2e/runner.js",
     "test": "npm run unit && npm run e2e",
     "lint": "eslint --ext .js,.vue src test/unit test/e2e/specs",
-    "build": "node build/build.js"
+    "build": "node build/build.js",
+    "mock": "nodemon --watch mock-server node mock-server/index.js --port 6543"
   },
   "dependencies": {
     "axios": "^0.18.0",
@@ -49,6 +50,7 @@
     "eslint-plugin-promise": "^3.4.0",
     "eslint-plugin-standard": "^3.0.1",
     "eslint-plugin-vue": "^4.0.0",
+    "express-mockjs": "^0.4.9",
     "extract-text-webpack-plugin": "^3.0.0",
     "file-loader": "^1.1.4",
     "friendly-errors-webpack-plugin": "^1.6.1",
@@ -58,6 +60,7 @@
     "nightwatch": "^0.9.12",
     "node-notifier": "^5.1.2",
     "node-sass": "^4.9.0",
+    "nodemon": "^1.17.4",
     "optimize-css-assets-webpack-plugin": "^3.2.0",
     "ora": "^1.2.0",
     "portfinder": "^1.0.13",

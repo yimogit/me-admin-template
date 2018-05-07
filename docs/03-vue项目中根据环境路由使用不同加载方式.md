@@ -12,9 +12,9 @@
 
 ```js
 const _import = require('./_import_' + process.env.NODE_ENV)
-...
+//...
   { path: '/404', name: '404', component: _import('public/404') },
-..
+//...
 ```
 
 ## 说明
