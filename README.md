@@ -11,16 +11,17 @@
 
 ## 拟定功能项
 
-* [x] 添加 scss 支持
-* [x] 根据环境读取不同基础配置
-* 开发环境禁用路由懒加载
-* 全局注册 `components`,`directives`,`filters`
-* 添加 vuex 使其更加方便管理全局变量
-* 添加 axios 请求 api 并进行封装
-* 添加 mock-lite 进行数据模拟
+* [x] [添加 scss 支持](./docs/01-vue项目中添加scss.md)
+* [x] [根据环境读取不同基础配置](./docs/02-vue项目中根据环境读取不同基础配置.md)
+* [x] [根据环境路由使用不同加载方式](./docs/03-vue项目中根据环境路由使用不同加载方式.md)
+* [x] [通用 components-directives-filters 的注册与使用](./docs/04-vue项目中通用组件-指令-过滤器的注册与使用.md)
+* [x] [添加 vuex 使其更加方便管理全局变量](./docs/05-vue项目中使用vuex进行状态管理.md)
+* [x] [添加 axios 封装 api 请求](./docs/06-添加axios封装api请求.md)
+* [x] [添加 express-mockjs 进行数据模拟](./docs/07-添加express-mockjs进行数据模拟.md)
 * 前后端分离后权限的实现
 * 引入 element-ui 构建通用列表,编辑页面
-* 二次封装 element-ui 组件使其更加符合项目应用
+* element-ui 表单验证的二次封装
+* element-ui 组件的二次封装
 * 封装通用操作,解耦第三方组件
 * 手写一个代码生成器构建基础的 CURD 前端代码
 
