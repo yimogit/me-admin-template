@@ -1,10 +1,10 @@
 import axios from 'axios'
-import webConfig from '../config'
+import _config from '@/_config'
 // import qs from 'qs'
-import store from '../store'
+import store from '@/store'
 
 const instance = axios.create({
-  baseURL: webConfig.apiBaseUrl, // api的base_url
+  baseURL: _config.apiBaseUrl, // api的base_url
   timeout: 10000 // 请求超时时间
   // transformRequest: data => qs.stringify(data)
 })

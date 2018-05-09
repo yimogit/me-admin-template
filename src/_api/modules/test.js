@@ -1,4 +1,4 @@
-import request from '@/utils/fetch'
+import request from '@/_api/request'
 
 export function test() {
   return request({
