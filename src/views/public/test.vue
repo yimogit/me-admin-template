@@ -1,15 +1,20 @@
 <template>
   <div>
-    test
+    <p>VFormInput:
+      <v-form-input v-model="test" />{{test}}</p>
   </div>
 </template>
+
 <script>
 export default {
   data() {
-    return {}
-  },
-  created() {},
-  mounted() {},
-  methods: {}
+    return {
+      test: 'abc'
+    }
+  }
 }
 </script>
+
+<style>
+
+</style>

@@ -58,3 +58,25 @@ export default {
 ```js
 this.$plugin.func()
 ```
+
+## 组件编写规范
+
+组件应以 `components/V分组名/组件名.vue` 层级关系存在  
+每个分组文件内通过 `components/V分组名/index.js` 以 `v-分组-组件名` 命名导出  
+示例
+
+```js
+import VFormInput from './Input'
+export default {
+  VFormInput
+}
+```
+
+最后在 `components/index.js` 中导出所有分组下的组件
+
+```js
+import VFrom from './VForm'
+export default {
+  ...VFrom
+}
+```
