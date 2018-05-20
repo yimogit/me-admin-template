@@ -8,6 +8,10 @@
 {
   "status": 1,
   "data": {
-    "key": "value"
+    "info": {
+      "adminName": "administrator"
+    },
+    "menus": [],
+    "modules": ["system-admin-list", "..."]
   }
 }

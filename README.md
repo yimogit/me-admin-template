@@ -18,10 +18,7 @@
 * [x] [添加 vuex 使其更加方便管理全局变量](./docs/05-vue项目中使用vuex进行状态管理.md)
 * [x] [添加 axios 封装 api 请求](./docs/06-添加axios封装api请求.md)
 * [x] [添加 express-mockjs 进行数据模拟](./docs/07-添加express-mockjs进行数据模拟.md)
-* 前后端分离后权限的实现
-* 引入 element-ui 构建通用列表,编辑页面
-* element-ui 表单验证的二次封装
-* element-ui 组件的二次封装
+* [x] [前后端分离后权限的实现](./docs/08-前后端分离后权限的实现.md)
 * 封装通用操作,解耦第三方组件
 * 手写一个代码生成器构建基础的 CURD 前端代码
 
