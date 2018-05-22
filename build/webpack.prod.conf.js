@@ -26,6 +26,7 @@ const webpackConfig = merge(baseWebpackConfig, {
   },
   devtool: config.build.productionSourceMap ? config.build.devtool : false,
   output: {
+    publicPath: './',
     path: config.build.assetsRoot,
     filename: utils.assetsPath('js/[name].[chunkhash].js'),
     chunkFilename: utils.assetsPath('js/[id].[chunkhash].js')
@@ -58,9 +59,9 @@ const webpackConfig = merge(baseWebpackConfig, {
     new OptimizeCSSPlugin({
       cssProcessorOptions: config.build.productionSourceMap
         ? {
-          safe: true,
-          map: { inline: false }
-        }
+            safe: true,
+            map: { inline: false }
+          }
         : { safe: true }
     }),
     // generate dist index.html with correct asset hash for caching.
