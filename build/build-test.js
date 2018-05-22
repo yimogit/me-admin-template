@@ -48,6 +48,5 @@ rm(path.join(config.build.assetsRoot, config.build.assetsSubDirectory), err => {
 })
 function copyTask() {
   cp('-R', 'favicon.ico', config.build.assetsRoot)
-  mkdir('-p', path.join(config.build.assetsRoot, 'mock-server'))
-  cp('-R', 'mock-server/*', path.join(config.build.assetsRoot, 'mock-server'))
+  cp('-R', 'mock-server/apiJson/', path.join(config.build.assetsRoot))
 }
