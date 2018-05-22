@@ -10,6 +10,7 @@ const instance = axios.create({
 // request拦截器
 instance.interceptors.request.use(
   e => {
+    e.url = _config.suffix ? e.url : e.url + _config.suffix
     e.params = e.params || {}
     e.headers = e.headers || {}
     if (localStorage.token) {

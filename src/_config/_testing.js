@@ -1,3 +1,4 @@
 export default {
-  apiBaseUrl: '/apidomain/api'
+  apiBaseUrl: '/mock-server/api',
+  suffix: '.json'
 }

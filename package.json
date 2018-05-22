@@ -13,6 +13,7 @@
     "test": "npm run unit && npm run e2e",
     "lint": "eslint --ext .js,.vue src test/unit test/e2e/specs",
     "build": "node build/build.js",
+    "build-test": "node build/build-test.js",
     "mock": "nodemon --watch mock-server node mock-server/index.js --port 6543"
   },
   "dependencies": {
