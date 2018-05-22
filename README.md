@@ -1,5 +1,7 @@
 # me-admin-template
 
+[![Build Status](https://travis-ci.org/yimogit/me-admin-template.svg?branch=master)](https://travis-ci.org/yimogit/me-admin-template)
+
 > 一个基于 vue-cli 的后台模板框架,以期构建一个可以快速使用的简单后台模板
 
 ## 技术栈
