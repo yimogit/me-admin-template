@@ -5,7 +5,7 @@ import filters from '../filters'
 import * as $codes from './codes'
 import * as $enums from './enums'
 import $ui from './ui'
-import $api from './api'
+import $api from '../api'
 
 const install = function(Vue, options) {
   // 注册全局指令，过滤器，组件

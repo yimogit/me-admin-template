@@ -62,8 +62,8 @@ export const appRouter = [
         }
       },
       {
-        path: 'admin/add',
-        name: $codes.system.admin_add_key,
+        path: 'admin/create',
+        name: $codes.system.admin_create_key,
         component: _import('system/admin/edit'),
         meta: {
           auth: true

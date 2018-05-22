@@ -1,7 +1,6 @@
 import axios from 'axios'
 import _config from '@/_config'
 // import qs from 'qs'
-import store from '@/store'
 
 const instance = axios.create({
   baseURL: _config.apiBaseUrl, // api的base_url
@@ -13,8 +12,8 @@ instance.interceptors.request.use(
   e => {
     e.params = e.params || {}
     e.headers = e.headers || {}
-    if (store.getters.token) {
-      e.headers['Authorization'] = store.getters.token
+    if (localStorage.token) {
+      e.headers['Authorization'] = localStorage.token
     }
     return e
   },

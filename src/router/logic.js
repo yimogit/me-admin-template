@@ -1,6 +1,5 @@
-import { getInfo } from '../_extends/api/modules/account'
+import { getInfo } from '@/api/modules/account'
 const beforeEach = (to, from, next) => {
-  console.log(to.meta.auth)
   if (!to.meta.auth) {
     return next()
   }

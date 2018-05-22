@@ -47,8 +47,9 @@
     "modules": [
       "home",
       "system-admin-list",
-      "system-admin-add",
-      "system-admin-del"
+      "system-admin-create",
+      "system-admin-edit",
+      "system-role-create"
     ]
   }
 }
