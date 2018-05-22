@@ -1,4 +1,4 @@
 export default {
-  apiBaseUrl: './apiJson',
+  apiBaseUrl: './api-test-data',
   suffix: '.json'
 }
