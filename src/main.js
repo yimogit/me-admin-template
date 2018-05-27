@@ -7,7 +7,8 @@ import store from './store'
 import _extends from './_extends'
 
 // 项目扩展
-Vue.use(_extends)
+// Vue.use(_extends) 或者调用 register
+_extends.register(Vue)
 
 Vue.config.productionTip = false
 

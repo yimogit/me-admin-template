@@ -4,6 +4,14 @@
 
 > 一个基于 vue-cli 的后台模板框架,以期构建一个可以快速使用的简单后台模板
 
+## 命令说明
+
+* `npm run dev` 启动开发服务器
+* `npm run build` 构建生成包
+* `npm run mock` 启动测试接口服务器
+* `npm run mock-build` 构建 mock 测试数据
+* `npm run build-test` 构建测试包并打包 api-json 文件到 dist/api-test-data 目录
+
 ## 技术栈
 
 * vue
@@ -11,7 +19,7 @@
 * vuex
 * axios
 
-## 拟定功能项
+## 拟定功能项及相关文档
 
 * [x] [添加 scss 支持](./docs/01-vue项目中添加scss.md)
 * [x] [根据环境读取不同基础配置](./docs/02-vue项目中根据环境读取不同基础配置.md)
@@ -31,4 +39,4 @@
 
 ## 项目进度
 
-* 2018-05-03 :基础框架搭建
+* 2018-05-03: 基础框架搭建

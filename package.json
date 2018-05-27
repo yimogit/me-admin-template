@@ -13,8 +13,9 @@
     "test": "npm run unit && npm run e2e",
     "lint": "eslint --ext .js,.vue src test/unit test/e2e/specs",
     "build": "node build/build.js",
-    "build-test": "node build/build-test.js",
-    "mock": "nodemon --watch mock-server node mock-server/index.js --port 6543"
+    "build-test": "node build/build-test.js&&npm run mock-build",
+    "mock": "nodemon --watch mock-server node mock-server/index.js --port 6543",
+    "mock-build": "node mock-server/build.js --target ./dist/api-test-data"
   },
   "dependencies": {
     "axios": "^0.18.0",

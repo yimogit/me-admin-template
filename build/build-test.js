@@ -1,9 +1,7 @@
 'use strict'
 require('shelljs/global')
 require('./check-versions')()
-
 process.env.NODE_ENV = 'testing'
-
 const ora = require('ora')
 const rm = require('rimraf')
 const path = require('path')
@@ -42,11 +40,9 @@ rm(path.join(config.build.assetsRoot, config.build.assetsSubDirectory), err => {
           "  Opening index.html over file:// won't work.\n"
       )
     )
-
     copyTask()
   })
 })
 function copyTask() {
   cp('-R', 'favicon.ico', config.build.assetsRoot)
-  cp('-R', 'mock-server/api-test-data/', path.join(config.build.assetsRoot))
 }
