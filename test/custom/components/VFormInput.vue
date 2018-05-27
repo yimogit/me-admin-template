@@ -1,5 +1,6 @@
 <template>
   <div>
+    <v-form-input v-model="inputTxt" />
   </div>
 </template>
 
@@ -7,7 +8,7 @@
 export default {
   data() {
     return {
-      test: 'abc'
+      inputTxt: 'ceshi'
     }
   }
 }

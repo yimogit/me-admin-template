@@ -29,13 +29,14 @@
 * [x] [添加 axios 封装 api 请求](./docs/06-添加axios封装api请求.md)
 * [x] [添加 express-mockjs 进行数据模拟](./docs/07-添加express-mockjs进行数据模拟.md)
 * [x] [前后端分离后权限的实现](./docs/08-前后端分离后权限的实现.md)
-* 封装通用操作,解耦第三方组件
+* [x] [封装通用操作,解耦组件](./docs/09-封装通用操作,解耦组件.md)
 * 手写一个代码生成器构建基础的 CURD 前端代码
 
 ## 项目参考
 
 * https://github.com/PanJiaChen/vue-element-admin
 * https://github.com/sls-admin/sls-admin-vue
+* https://github.com/nicejade/vue-boilerplate-template
 
 ## 项目进度
 

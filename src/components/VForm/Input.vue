@@ -1,9 +1,10 @@
 <template>
-    <input type="value" v-model="currentValue" @change="change" />
+  <input type="value" v-model="currentValue" @change="change" />
 </template>
 
 <script>
 export default {
+  name: 'v-form-input',
   props: {
     value: {
       type: String
@@ -16,12 +17,12 @@ export default {
   },
   watch: {
     value(val) {
-      this.currentValue = val
+      if (this.currentValue !== val) {
+        this.currentValue = val
+      }
     },
     currentValue(val) {
-      if (this.value !== val) {
-        this.$emit('input', val)
-      }
+      if (val !== this.value) this.$emit('input', val)
     }
   },
   methods: {
