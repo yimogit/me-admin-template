@@ -44,5 +44,5 @@ rm(path.join(config.build.assetsRoot, config.build.assetsSubDirectory), err => {
   })
 })
 function copyTask() {
-  cp('-R', 'favicon.ico', config.build.assetsRoot)
+  // cp('-R', 'favicon.ico', config.build.assetsRoot)
 }
