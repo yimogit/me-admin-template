@@ -2,8 +2,7 @@ import directives from '../directives'
 import components from '../components'
 import filters from '../filters'
 
-import $codes from './codes'
-import $enums from './enums'
+import * as $codes from './codes'
 import $ui from './ui'
 import $api from '../api'
 
@@ -13,8 +12,8 @@ const register = function(_vue) {
   Object.keys(filters).forEach(e => _vue.filter(e, filters[e]))
   Object.keys(components).forEach(e => _vue.component(e, components[e]))
 
-  // 项目扩展 $api, $ui, $codes, $enums
-  var allExtends = { $api, $ui, $codes, $enums }
+  // 项目扩展 $api, $ui, $codes
+  var allExtends = { $api, $ui, $codes }
   Object.keys(allExtends).forEach(e => {
     const plugin = {}
     plugin[e] = {

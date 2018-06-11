@@ -1,5 +1,4 @@
-import $codes from '@/_extends/codes'
-import Layout from '@/views/layout/Layout'
+import Layout from '@/components/VLayout'
 const _import = require('../_import_' + process.env.NODE_ENV)
 export default {
   path: '/system',
@@ -7,7 +6,7 @@ export default {
   children: [
     {
       path: 'admin/list',
-      name: $codes.system.admin_list_key,
+      name: 'system_admin_list',
       component: _import('system/admin/list'),
       meta: {
         auth: true
@@ -15,25 +14,25 @@ export default {
     },
     {
       path: 'admin/create',
-      name: $codes.system.admin_create_key,
+      name: 'admin_create',
       component: _import('system/admin/edit'),
       meta: {
         auth: true,
-        pname: $codes.system.admin_list_key
+        pname: 'system_admin_list'
       }
     },
     {
       path: 'admin/edit/:id',
-      name: $codes.system.admin_edit_key,
+      name: 'system_admin_edit',
       component: _import('system/admin/edit'),
       meta: {
         auth: true,
-        pname: $codes.system.admin_list_key
+        pname: 'system_admin_list'
       }
     },
     {
       path: 'role/list',
-      name: $codes.system.role_list_key,
+      name: 'system_role_list',
       component: _import('system/role/list'),
       meta: {
         auth: true

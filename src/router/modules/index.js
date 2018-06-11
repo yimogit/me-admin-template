@@ -1,5 +1,5 @@
 const files = require.context('.', true, /\.js/)
-const modules = []
+var modules = []
 files.keys().forEach(key => {
   if (key === './index.js') {
     return
@@ -8,10 +8,13 @@ files.keys().forEach(key => {
   var m = files(key)
   var item = Object.keys(m).reduce((s, e) => {
     if (e !== 'default') {
-      s[e] = m[e]
+      if (Array.isArray(m[e])) {
+        modules = modules.concat(m[e])
+        return s
+      } else s[e] = m[e]
     }
     return s
   }, m.default || {})
-  modules.push(item)
+  if (item && item.path) modules.push(item)
 })
 export default modules

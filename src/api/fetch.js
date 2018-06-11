@@ -21,21 +21,24 @@ instance.interceptors.request.use(
   },
   error => ({ status: 0, msg: error.message })
 )
-const ApiStatus = {
-  ERROR: 500,
-  SUCCESS: 200,
-  TOKENINVALID: 401
-}
 // respone拦截器
 instance.interceptors.response.use(
   response => {
     const resp = response.data
-    if (response.status === ApiStatus.SUCCESS) {
+    if (response.status === 200) {
       return resp
     }
     return response
   },
   error => {
+    if (
+      error.message &&
+      (error.message.indexOf('403') ||
+        error.message.indexOf('401') ||
+        error.message.indexOf('500'))
+    ) {
+      alert('接口异常,请稍后再试')
+    }
     console.log('err' + error) // for debug
     return Promise.reject(error)
   }

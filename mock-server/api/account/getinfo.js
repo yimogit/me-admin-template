@@ -29,7 +29,7 @@ module.exports = {
               {
                 menuName: '管理员列表',
                 menuIcon: null,
-                menuCode: 'system-admin-list',
+                menuCode: 'system_admin_list',
                 menuUrl: null
               }
             ]
@@ -37,7 +37,7 @@ module.exports = {
           {
             menuName: '角色列表',
             menuIcon: null,
-            menuCode: 'system-role-list',
+            menuCode: 'system_role_list',
             menuUrl: null
           }
         ]
@@ -45,10 +45,10 @@ module.exports = {
     ],
     modules: [
       'home',
-      'system-admin-list',
-      'system-admin-create',
-      'system-admin-edit',
-      'system-role-create'
+      'system_admin_list',
+      'system_admin_create',
+      'system_admin_edit',
+      'system_role_create'
     ]
   }
 }
