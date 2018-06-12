@@ -13,20 +13,24 @@ module.exports = {
     },
     menus: [
       {
-        menuName: '控制台11',
+        menuId: 1,
+        menuName: '控制台',
         menuIcon: null,
         menuCode: 'home',
         menuUrl: null
       },
       {
+        menuId: 2,
         menuName: '系统管理',
         menuIcon: null,
         children: [
           {
+            menuId: 3,
             menuName: '管理员管理',
             menuIcon: null,
             children: [
               {
+                menuId: 4,
                 menuName: '管理员列表',
                 menuIcon: null,
                 menuCode: 'system_admin_list',
@@ -35,6 +39,7 @@ module.exports = {
             ]
           },
           {
+            menuId: 6,
             menuName: '角色列表',
             menuIcon: null,
             menuCode: 'system_role_list',
