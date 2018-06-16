@@ -53,7 +53,8 @@ module.exports = {
       'system_admin_list',
       'system_admin_create',
       'system_admin_edit',
-      'system_role_create'
+      'system_role_create',
+      'system_role_del'
     ]
   }
 }

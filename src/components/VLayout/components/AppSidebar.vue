@@ -13,7 +13,7 @@ export default {
   },
   data() {
     return {
-      menus: window.menus
+      menus: window.authInfo.menus
     }
   },
   computed: {

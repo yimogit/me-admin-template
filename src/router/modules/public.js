@@ -16,7 +16,7 @@ export const homeRouter = [
   {
     path: '/login',
     name: 'login',
-    component: _import('account/login'),
+    component: _import('public/login'),
     meta: {
       auth: false
     }

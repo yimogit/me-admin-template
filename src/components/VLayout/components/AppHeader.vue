@@ -16,7 +16,7 @@ export default {
     }
   },
   created() {
-    this.adminName = window.info.adminName
+    this.adminName = window.authInfo && window.authInfo.info.adminName
   },
   methods: {
     logout() {

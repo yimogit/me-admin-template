@@ -1,5 +1,6 @@
 import axios from 'axios'
 import _config from '@/_config'
+import $ui from '@/_extends/ui'
 // import qs from 'qs'
 
 const instance = axios.create({
@@ -25,22 +26,25 @@ instance.interceptors.request.use(
 instance.interceptors.response.use(
   response => {
     const resp = response.data
+    // if (resp && resp.status === 0) {
+    //   $ui.pages.info(resp.msg)
+    // }
     if (response.status === 200) {
       return resp
     }
     return response
   },
   error => {
+    const err = { status: 0, msg: '服务器异常' }
     if (
       error.message &&
-      (error.message.indexOf('403') ||
-        error.message.indexOf('401') ||
-        error.message.indexOf('500'))
+      (error.message.indexOf('403') || error.message.indexOf('401'))
     ) {
-      alert('接口异常,请稍后再试')
+      err.msg = '权限校验失败，请重新登录'
+      $ui.pages.info(err.msg)
     }
     console.log('err' + error) // for debug
-    return Promise.reject(error)
+    return Promise.reject(err)
   }
 )
 

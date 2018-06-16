@@ -1,13 +1,13 @@
 export default {
   auth: {
     inserted: (el, binding) => {
-      if (
-        binding.value &&
-        window.modules &&
-        window.modules.indexOf(binding.value) === -1
-      ) {
-        // el.remove()
-        el.setAttribute('disabled', 'disabled')
+      const authModules = window.authInfo && window.authInfo.modules
+      if (binding.value && authModules.indexOf(binding.value) === -1) {
+        if (binding.arg === 'remove') {
+          el.remove()
+        } else {
+          el.setAttribute('disabled', 'disabled')
+        }
       }
     }
   }

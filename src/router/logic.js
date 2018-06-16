@@ -6,12 +6,14 @@ const beforeEach = (to, from, next) => {
   if (!localStorage.token) {
     return next('/login')
   }
-  if (window.info) return next()
+  if (window.authInfo && window.authInfo.info) return next()
   getInfo().then(res => {
     localStorage.token = res.data.info.token
-    window.info = res.data.info
-    window.menus = res.data.menus
-    window.modules = res.data.modules
+    window.authInfo = {
+      info: res.data.info,
+      menus: res.data.menus,
+      modules: res.data.modules
+    }
     next()
   })
 }

@@ -10,9 +10,9 @@ const otherRouter = [
   }
 ]
 var allModules = moduleRouter
-if (process.env.NODE_ENV === 'development') {
+if (process.env.LOAD_TEST_ROUTER === true) {
   const testRoutes = require('@/views/test/routes.js')
   allModules.push(testRoutes.default)
 }
-allModules = allModules.concat([...otherRouter])
+allModules = allModules.concat(otherRouter)
 export const routes = allModules

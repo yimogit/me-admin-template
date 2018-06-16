@@ -3,13 +3,14 @@ export default {
     auth: String,
     type: String,
     icon: String,
+    text: String,
     size: {
       type: String,
       default: 'small'
     }
   },
   methods: {
-    handle() {
+    click_handle() {
       this.$emit('click')
     }
   }
