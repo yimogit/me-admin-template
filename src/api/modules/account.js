@@ -2,7 +2,7 @@ import request from '../fetch'
 
 export function login(data) {
   return request({
-    url: '/account/login',
+    url: '/v2/account/login',
     method: 'post',
     data: data
   })
@@ -10,7 +10,7 @@ export function login(data) {
 
 export function getInfo() {
   return request({
-    url: '/account/getinfo',
+    url: '/v1/account/getinfo',
     method: 'get'
   })
 }

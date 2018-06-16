@@ -7,7 +7,8 @@ var app = express()
 // app.use(mockjs(path.join(__dirname, 'mocks')))
 // 自定义路径 '/api'
 var config = loadConfig(['port'], '--')
-app.use('/api', mockjs(path.join(__dirname, 'api')))
+app.use('/api/v1', mockjs(path.join(__dirname, 'api/v1')))
+app.use('/api/v2', mockjs(path.join(__dirname, 'api/v2')))
 
 console.log('mock-server[mockjs-lite]:http://localhost:' + config.port)
 // console.log('mockjs-lite定义：http://mockjs-lite.js.org/docs/examples.html')

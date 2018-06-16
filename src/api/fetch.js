@@ -38,7 +38,7 @@ instance.interceptors.response.use(
     const err = { status: 0, msg: '服务器异常' }
     if (
       error.message &&
-      (error.message.indexOf('403') || error.message.indexOf('401'))
+      (error.message.indexOf('403') > -1 || error.message.indexOf('401') > -1)
     ) {
       err.msg = '权限校验失败，请重新登录'
       $ui.pages.info(err.msg)

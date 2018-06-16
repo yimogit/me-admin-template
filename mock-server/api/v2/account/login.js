@@ -7,6 +7,6 @@
 module.exports = {
   status: 1,
   data: {
-    token: '@string(32)'
+    token: 'v2_@string(32)'
   }
 }
