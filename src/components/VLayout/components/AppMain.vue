@@ -1,7 +1,10 @@
 <template>
   <transition name="fade" mode="out-in">
-    <router-view :style="cstyle">
-    </router-view>
+    <slot>
+      <keep-alive>
+        <router-view></router-view>
+      </keep-alive>
+    </slot>
   </transition>
 </template>
 

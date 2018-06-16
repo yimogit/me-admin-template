@@ -1,15 +1,34 @@
 <template>
-    <div>admin
-        <v-btn-create @click="e=>$ui.pages.info('添加')" auth="system_admin_create">添加会员</v-btn-create>
-        <div>
-            <p> 管理员名称|是否启用|创建时间|操作</p>
-            <p v-for="item in list" :key="item.adminName">
-                {{item.adminName}} | {{item.isEnable}} | {{item.createdAt}} |
-                <v-btn-edit @click="e=>$ui.pages.info('编辑'+item.adminName)" auth="system_admin_edit">编辑</v-btn-edit>
-                <v-btn-del @click="e=>$ui.pages.warn('删除'+item.adminName)" auth="system_admin_del">删除</v-btn-del>
-            </p>
-        </div>
-    </div>
+  <div>
+    <el-form :inline="true">
+      <el-form-item label="关键字">
+        <el-input type="text">
+          <el-button slot="append" icon="el-icon-search"></el-button>
+        </el-input>
+      </el-form-item>
+      <el-form-item class="float-r">
+        <v-btn-create @click="e=>$ui.pages.info('添加管理员')" auth="system_admin_create">添加管理员</v-btn-create>
+      </el-form-item>
+    </el-form>
+    <el-table :data="list" border height="300" style="width: 100%">
+      <el-table-column prop="adminName" label="管理员名称">
+      </el-table-column>
+      <el-table-column label="是否启用">
+        <template slot-scope="prop">
+          <el-tag type="prop.row.isEnable?'success':'info'">{{prop.row.isEnable?'是':'否'}}</el-tag>
+        </template>
+      </el-table-column>
+      <el-table-column prop="createdAt" label="创建时间">
+      </el-table-column>
+      <el-table-column>
+        <template slot-scope="prop">
+          <v-btn-edit @click="e=>$ui.pages.info('编辑'+prop.row.adminName)" auth="system_admin_edit">编辑</v-btn-edit>
+          <v-btn-del @click="e=>$ui.pages.warn('删除'+prop.row.adminName)" auth="system_admin_del">删除</v-btn-del>
+        </template>
+      </el-table-column>
+    </el-table>
+
+  </div>
 </template>
 
 <script>
@@ -24,7 +43,7 @@ export default {
       list: []
     }
   },
-  created() {
+  activated() {
     this.loadData()
   },
   methods: {

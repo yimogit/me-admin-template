@@ -1,10 +1,10 @@
 <template>
-    <button :size="size" v-auth="auth" @click="$emit('click')">
-        <slot name="icon">
-            <i :class="icon"></i>
-        </slot>
-        <slot>{{text}}</slot>
-    </button>
+  <el-button :size="size" v-auth="auth" @click="$emit('click')">
+    <slot name="icon">
+      <i :class="icon"></i>
+    </slot>
+    <slot>{{text}}</slot>
+  </el-button>
 </template>
 
 <script>

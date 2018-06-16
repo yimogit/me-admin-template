@@ -31,3 +31,22 @@
 ::-webkit-scrollbar-resizer:vertical {
   background-color: #ff6e00;
 }
+
+.text-left {
+  text-align: left;
+}
+.text-center {
+  text-align: center;
+}
+.text-right {
+  text-align: right;
+}
+.float-l {
+  float: left;
+}
+.float-r {
+  float: right;
+}
+.clearfix {
+  clear: both;
+}

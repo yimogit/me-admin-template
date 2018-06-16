@@ -33,22 +33,9 @@ body {
 .app-right {
   overflow-y: auto;
   border: 1px solid blue;
-  flex: 0 0 150px; /* 左右两列固定宽 */
+  flex: 0 0 auto; /* 左右两列固定宽 */
 }
 
 .app-left {
   order: -1; /* 让left居于左侧 */
-}
-
-.app_left_sidebar {
-  .active {
-    color: red;
-    a,
-    span {
-      color: red;
-    }
-  }
-  .nav_child_menus {
-    padding-left: 2rem;
-  }
 }

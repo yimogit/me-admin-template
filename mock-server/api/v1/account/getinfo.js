@@ -15,19 +15,19 @@ module.exports = {
       {
         menuId: 1,
         menuName: '控制台',
-        menuIcon: null,
+        menuIcon: 'el-icon-menu',
         menuCode: 'home',
         menuUrl: null
       },
       {
         menuId: 2,
         menuName: '系统管理',
-        menuIcon: null,
+        menuIcon: 'el-icon-setting',
         children: [
           {
             menuId: 3,
             menuName: '管理员管理',
-            menuIcon: null,
+            menuIcon: 'null',
             children: [
               {
                 menuId: 4,

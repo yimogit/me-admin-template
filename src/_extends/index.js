@@ -1,12 +1,17 @@
+import ElementUI from 'element-ui'
+import '../assets/styles/app.css'
+import '../assets/styles/layout.css'
+import 'element-ui/lib/theme-chalk/index.css'
+
 import directives from '../directives'
 import components from '../components'
 import filters from '../filters'
-
 import * as $codes from './codes'
 import $ui from './ui'
 import $api from '../api'
 
 const register = function(_vue) {
+  _vue.use(ElementUI)
   // 注册全局指令，过滤器，组件
   Object.keys(directives).forEach(e => _vue.directive(e, directives[e]))
   Object.keys(filters).forEach(e => _vue.filter(e, filters[e]))

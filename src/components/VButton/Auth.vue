@@ -1,10 +1,10 @@
 <template>
-    <button :size="size" v-auth="auth" @click="click_handle">
+    <el-button :size="size" v-auth="auth" @click="click_handle">
         <slot name="icon">
             <i :class="icon"></i>
         </slot>
         <slot>{{text}}</slot>
-    </button>
+    </el-button>
 </template>
 
 <script>

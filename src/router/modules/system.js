@@ -1,4 +1,4 @@
-import Layout from '@/components/VLayout/App.vue'
+import Layout from '@/components/VLayout'
 const _import = require('../_import_' + process.env.NODE_ENV)
 export default {
   path: '/system',

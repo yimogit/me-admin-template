@@ -6,6 +6,7 @@ export default {
         if (binding.arg === 'remove') {
           el.remove()
         } else {
+          el.className += ' is-disabled '
           el.setAttribute('disabled', 'disabled')
         }
       }

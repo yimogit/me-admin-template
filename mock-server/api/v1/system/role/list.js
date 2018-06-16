@@ -7,7 +7,7 @@
 module.exports = {
   status: 1,
   data: {
-    'rows|5': [
+    'rows|3': [
       {
         'roleName|1': ['管理员', '超级管理员', '测试'],
         isEnable: '@boolean',

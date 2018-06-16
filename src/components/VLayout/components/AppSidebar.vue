@@ -1,23 +1,33 @@
 <template>
-  <div :style="cstyle" class="app_left_sidebar">
-    <v-app-nav :menus="menus" :currentIds="currentIds" />
-  </div>
+  <el-menu class="el-menu-vertical-custom" :default-active="String(currentId)" :collapse="isCollapse">
+    <v-app-menu :menus="menus" />
+  </el-menu>
 </template>
 
 <script>
-import VAppNav from './AppNav.vue'
+import VAppMenu from './AppMenu.vue'
 export default {
-  props: ['cstyle'],
+  props: ['collspse'],
   components: {
-    VAppNav
+    VAppMenu
+  },
+  watch: {
+    collspse: {
+      handler(val) {
+        console.log(val)
+        this.isCollapse = val
+      },
+      immediate: true
+    }
   },
   data() {
     return {
+      isCollapse: this.collspse,
       menus: window.authInfo.menus
     }
   },
   computed: {
-    currentIds() {
+    currentId() {
       var arr = []
       ;(function fn(key, value, items, resultArr) {
         var checkResult = false
@@ -33,23 +43,28 @@ export default {
         }
         return checkResult
       })('menuCode', this.$route.name, this.menus, arr)
-      return arr.map(e => e.menuId)
+      return arr.map(e => e.menuId)[0]
     }
   }
 }
 </script>
-<style lang="scss">
-.app_left_sidebar {
-  .active {
-    color: red;
-    a,
-    span {
-      color: red;
-    }
-  }
-  .nav_child_menus {
-    padding-left: 2rem;
-  }
+
+<style>
+.el-menu-vertical-custom {
+  width: 200px;
+  height: 100%;
+}
+.el-menu-vertical-custom.el-menu--collapse {
+  width: auto;
+  transition: width 0.1s;
+}
+.el-menu--collapse .left-menu--text,
+.el-menu--collapse .el-icon-arrow-right {
+  /* transition: width 0.1s; */
+  height: 0;
+  width: 0;
+  overflow: hidden;
+  visibility: hidden;
+  display: inline-block;
 }
 </style>
-

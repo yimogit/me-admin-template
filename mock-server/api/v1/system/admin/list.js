@@ -10,7 +10,7 @@ module.exports = {
     'rows|5': [
       {
         adminName: '@cname',
-        isEnable: '@boolean',
+        isEnable: '@boolean()',
         createdAt: '@datetime',
         'roleIds|1-3': [1, 2, 3]
       }

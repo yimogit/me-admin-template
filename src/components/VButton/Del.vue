@@ -1,10 +1,10 @@
 <template>
-  <button :size="size" v-auth="auth" @click="click_handle">
+  <el-button :size="size" v-auth="auth" @click="click_handle">
     <slot name="icon">
       <i :class="icon"></i>
     </slot>
     <slot>{{text}}</slot>
-  </button>
+  </el-button>
 </template>
 
 <script>
@@ -28,11 +28,14 @@ export default {
       else return this.$emit('click')
     },
     confirmHandle() {
-      if (confirm('是否删除？')) {
-        this.$emit('yes')
-      } else {
-        this.$emit('no')
-      }
+      this.$ui.pages
+        .confirm('是否删除？')
+        .then(() => {
+          this.$emit('yes')
+        })
+        .catch(() => {
+          this.$emit('no')
+        })
     }
   }
 }
