@@ -1,3 +1,4 @@
 export default {
-  apiBaseUrl: 'http://localhost:6543/api'
+  apiBaseUrl: 'http://localhost:6543/api',
+  isMockTest: true
 }

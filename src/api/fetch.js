@@ -26,9 +26,9 @@ instance.interceptors.request.use(
 instance.interceptors.response.use(
   response => {
     const resp = response.data
-    // if (resp && resp.status === 0) {
-    //   $ui.pages.info(resp.msg)
-    // }
+    if (resp && resp.status === 0 && resp.msg) {
+      $ui.pages.warn(resp.msg)
+    }
     if (response.status === 200) {
       return resp
     }
@@ -41,8 +41,8 @@ instance.interceptors.response.use(
       (error.message.indexOf('403') > -1 || error.message.indexOf('401') > -1)
     ) {
       err.msg = '权限校验失败，请重新登录'
-      $ui.pages.info(err.msg)
     }
+    $ui.pages.warn(err.msg)
     console.log('err' + error) // for debug
     return Promise.reject(err)
   }

@@ -14,7 +14,7 @@ export default {
   props: {
     icon: {
       type: String,
-      default: 'iconfont icon-edit'
+      default: 'el-icon-edit'
     },
     text: {
       type: String,

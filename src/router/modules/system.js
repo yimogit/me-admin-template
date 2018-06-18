@@ -18,6 +18,7 @@ export default {
       component: _import('system/admin/edit'),
       meta: {
         auth: true,
+        title: '管理员创建',
         pname: 'system_admin_list'
       }
     },
@@ -27,6 +28,7 @@ export default {
       component: _import('system/admin/edit'),
       meta: {
         auth: true,
+        title: '管理员编辑',
         pname: 'system_admin_list'
       }
     },

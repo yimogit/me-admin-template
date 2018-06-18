@@ -1,16 +1,22 @@
 <template>
   <div>
-    <el-form :inline="true">
-      <el-form-item label="关键字">
-        <el-input type="text">
-          <el-button slot="append" icon="el-icon-search"></el-button>
-        </el-input>
-      </el-form-item>
-      <el-form-item class="float-r">
-        <v-btn-create @click="e=>$ui.pages.info('添加管理员')" auth="system_admin_create">添加管理员</v-btn-create>
-      </el-form-item>
-    </el-form>
-    <el-table :data="list" border height="300" style="width: 100%">
+    <el-row>
+      <el-col :span="18">
+        <el-form :inline="true" @submit.native.prevent="loadData">
+          <el-form-item label="关键字">
+            <el-input type="text" v-model="search.keyword">
+              <el-button slot="append" icon="el-icon-search" @click="loadData"></el-button>
+            </el-input>
+          </el-form-item>
+        </el-form>
+      </el-col>
+      <el-col :span="6" class="text-right">
+        <!-- <v-btn-create @click="$ui.pages.link('/system/admin/create')" auth="system_admin_create">添加管理员</v-btn-create> -->
+        <v-btn-create @click="showDialog({})" auth="system_admin_create">添加管理员</v-btn-create>
+      </el-col>
+    </el-row>
+
+    <el-table :data="list" border height="400" style="width: 100%">
       <el-table-column prop="adminName" label="管理员名称">
       </el-table-column>
       <el-table-column label="是否启用">
@@ -20,27 +26,38 @@
       </el-table-column>
       <el-table-column prop="createdAt" label="创建时间">
       </el-table-column>
-      <el-table-column>
+      <el-table-column width="180">
         <template slot-scope="prop">
-          <v-btn-edit @click="e=>$ui.pages.info('编辑'+prop.row.adminName)" auth="system_admin_edit">编辑</v-btn-edit>
-          <v-btn-del @click="e=>$ui.pages.warn('删除'+prop.row.adminName)" auth="system_admin_del">删除</v-btn-del>
+          <v-btn-edit @click="$ui.pages.link('/system/admin/edit/'+prop.row.id)" auth="system_admin_edit" icon="el-icon-document">编辑</v-btn-edit>
+          <!-- <v-btn-edit @click="showDialog(prop.row)" auth="system_admin_edit">编辑</v-btn-edit> -->
+          <v-btn-del @click="delAdmin" auth="system_admin_del">删除</v-btn-del>
         </template>
       </el-table-column>
     </el-table>
 
+    <el-dialog width="80%" :title="editDialog.title" v-if="editDialog.show" :visible.sync="editDialog.show" :close-on-click-modal="false">
+      <v-admin-edit @submit="submitCallback" :id="editDialog.editId" />
+    </el-dialog>
   </div>
 </template>
 
 <script>
+import VAdminEdit from './components/Edit'
 export default {
+  components: {
+    VAdminEdit
+  },
   data() {
     return {
       search: {
-        pageIndex: 1,
-        pageSize: 20,
         keyword: ''
       },
-      list: []
+      list: [],
+      editDialog: {
+        title: '',
+        editId: null,
+        show: false
+      }
     }
   },
   activated() {
@@ -48,9 +65,33 @@ export default {
   },
   methods: {
     loadData() {
-      this.$api.system.getAdminList(this.search).then(res => {
+      const search = Object.assign(this.search, {
+        pageIndex: 1,
+        pageSize: 20
+      })
+      this.$api.system.getAdminList(search).then(res => {
         if (res.status !== 1) return
-        this.list = res.data.rows
+        this.list = res.data.rows.filter(
+          e => e.adminName.indexOf(search.keyword) > -1
+        )
+      })
+    },
+    showDialog(row) {
+      this.editDialog.title = '管理员' + (row.id > 0 ? '编辑' : '创建')
+      this.editDialog.editId = row.id
+      this.editDialog.show = true
+    },
+    submitCallback(result) {
+      this.editDialog.show = false
+      if (!result) return
+      this.loadData()
+    },
+    delAdmin(id) {
+      this.$ui.pages.confirm('确认删除？').then(res => {
+        this.$api.system.delAdmin({ id: id }).then(res => {
+          if (res.status !== 1) return
+          this.$ui.pages.success(res.msg)
+        })
       })
     }
   }

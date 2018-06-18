@@ -1,5 +1,5 @@
 <template>
-  <el-button :size="size" v-auth="auth" type="primary" @click="$emit('click')">
+  <el-button :size="size" type="primary" v-auth="auth" @click="$emit('click')">
     <slot name="icon">
       <i :class="icon"></i>
     </slot>
@@ -14,7 +14,7 @@ export default {
   props: {
     icon: {
       type: String,
-      default: 'iconfont icon-create'
+      default: 'el-icon-plus'
     },
     text: {
       type: String,

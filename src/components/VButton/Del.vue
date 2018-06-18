@@ -1,5 +1,5 @@
 <template>
-  <el-button :size="size" v-auth="auth" @click="click_handle">
+  <el-button :size="size" type="danger" v-auth="auth" @click="click_handle">
     <slot name="icon">
       <i :class="icon"></i>
     </slot>
@@ -14,7 +14,7 @@ export default {
   props: {
     icon: {
       type: String,
-      default: 'iconfont icon-del'
+      default: 'el-icon-delete'
     },
     text: {
       type: String,

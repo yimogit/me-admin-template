@@ -14,7 +14,6 @@ export default {
   watch: {
     collspse: {
       handler(val) {
-        console.log(val)
         this.isCollapse = val
       },
       immediate: true
@@ -42,7 +41,12 @@ export default {
           }
         }
         return checkResult
-      })('menuCode', this.$route.name, this.menus, arr)
+      })(
+        'menuCode',
+        this.$route.meta.pname || this.$route.name,
+        this.menus,
+        arr
+      )
       return arr.map(e => e.menuId)[0]
     }
   }

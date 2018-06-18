@@ -16,14 +16,25 @@ export const info = (msg, opt) => {
     message: msg,
     type: 'info',
     showClose: true,
+    duration: 1500,
     ...opt
   })
 }
 export const warn = (msg, opt) => {
   _currentMessage({
     message: msg,
-    type: 'warn',
+    type: 'warning',
     showClose: true,
+    duration: 2000,
+    ...opt
+  })
+}
+export const success = (msg, opt) => {
+  _currentMessage({
+    message: msg,
+    type: 'success',
+    showClose: true,
+    duration: 1500,
     ...opt
   })
 }

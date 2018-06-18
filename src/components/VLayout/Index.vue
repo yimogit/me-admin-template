@@ -30,7 +30,7 @@ import VAppContainer from './components/AppContainer'
 import VAppHeader from './components/AppHeader'
 import VAppSidebar from './components/AppSidebar'
 import VAppMain from './components/AppMain'
-
+import { mapGetters } from 'vuex'
 export default {
   name: 'layout',
   components: {
@@ -52,7 +52,12 @@ export default {
   watch: {
     $route: {
       handler(val) {
-        const routeInfo = this.currentRouteInfo(this.$route.name)
+        const routeInfo = this.currentRouteInfo(this.$route.name) || {
+          menuName: this.$route.meta.title || this.$route.fullPath,
+          menuUrl: this.$route.fullPath,
+          menuCode: this.$route.name
+        }
+        console.log(routeInfo)
         this.currentTab = this.$route.name
         if (this.pageTabs.find(e => e.tabKey === this.currentTab)) return
         this.pageTabs.push({
@@ -62,8 +67,15 @@ export default {
             : { name: routeInfo.menuCode },
           tabKey: routeInfo.menuCode
         })
+        // console.log(this.pageTabs)
       },
       immediate: true
+    },
+    removeNavTab(val) {
+      if (val) {
+        this.removeTab(val)
+        this.$store.dispatch('removeNavTab', '')
+      }
     }
   },
   created() {
@@ -76,6 +88,7 @@ export default {
     }
   },
   computed: {
+    ...mapGetters(['removeNavTab']),
     headerStyle() {
       return `height:${this.headerHeight}px;line-height: ${
         this.headerHeight
@@ -114,7 +127,9 @@ export default {
     },
     removeTab(targetName) {
       this.pageTabs = this.pageTabs.filter(e => e.tabKey !== targetName)
-      const currentRoute = this.pageTabs.length > 0 && this.pageTabs[0].tabRoute
+      const currentRoute =
+        this.pageTabs.length > 0 &&
+        this.pageTabs[this.pageTabs.length - 1].tabRoute
       if (!currentRoute) {
         return this.$ui.pages.link(this.$codes.index_path)
       }
@@ -129,16 +144,17 @@ export default {
   position: relative;
 }
 .layout-main-content {
-  width: 96%;
   position: absolute;
-  top: 40px;
+  top: 43px;
+  left: 0;
+  right: 0;
   bottom: 0;
   overflow: auto;
   padding: 15px;
 }
 .layout-toggle-menu {
   width: 40px;
-  height: 40px;
+  height: 39px;
   background: #1f2f3d;
   position: absolute;
   top: 0;
@@ -150,6 +166,8 @@ export default {
   font-size: 14px;
   opacity: 0.5;
   transition: opacity 0.3s ease-out;
+  margin-left: 1px;
+  margin-top: 2px;
 }
 .layout-nav-tabs {
   width: 100%;
@@ -157,6 +175,7 @@ export default {
   z-index: 999;
 }
 .layout-nav-tabs .el-tabs__header {
-  padding-left: 45px;
+  padding-left: 42px;
+  padding-top: 2px;
 }
 </style>

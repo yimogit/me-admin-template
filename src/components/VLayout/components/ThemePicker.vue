@@ -1,22 +1,10 @@
 <template>
   <el-color-picker class="theme-picker" popper-class="theme-picker-dropdown" v-model="theme"></el-color-picker>
 </template>
-<style>
-.custom-theme-bg {
-  background-color: #7aaade;
-  color: white;
-}
-.custom-theme-bg * {
-  color: white;
-}
-.custom-theme-color {
-  color: #7aaade;
-}
-</style>
 
 <script>
 const version = require('element-ui/package.json').version // element-ui version from node_modules
-const ORIGINAL_THEME = '#7AAADE' // default color
+const ORIGINAL_THEME = '#409EFF' // default color
 export default {
   data() {
     return {
@@ -153,6 +141,16 @@ export default {
 </script>
 
 <style>
+.custom-theme-bg {
+  background-color: #409eff;
+  color: white;
+}
+.custom-theme-bg * {
+  color: white;
+}
+.custom-theme-color {
+  color: #409eff;
+}
 .theme-picker .el-color-picker__trigger {
   vertical-align: middle;
 }

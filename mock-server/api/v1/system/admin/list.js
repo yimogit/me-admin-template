@@ -9,6 +9,7 @@ module.exports = {
   data: {
     'rows|5': [
       {
+        id: '@increment',
         adminName: '@cname',
         isEnable: '@boolean()',
         createdAt: '@datetime',
