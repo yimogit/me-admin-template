@@ -1,5 +1,4 @@
 <template>
-
   <el-container>
     <el-header :style="headerStyle" class="custom-theme-bg">
       <v-app-header />
@@ -16,9 +15,10 @@
           <el-tab-pane :label="item.tabName" :closable="true" v-for="item in pageTabs" :key="item.tabKey" :name="item.tabKey"></el-tab-pane>
         </el-tabs>
         <v-app-main class="layout-main-content">
-          <keep-alive>
+          <keep-alive v-if="router_cache">
             <router-view></router-view>
           </keep-alive>
+          <router-view v-else></router-view>
         </v-app-main>
       </el-container>
     </el-container>
@@ -98,6 +98,9 @@ export default {
       return (
         'width:auto;height:' + (this.innerHeight - this.headerHeight) + 'px'
       )
+    },
+    router_cache() {
+      return this.$route.meta.cache === true
     }
   },
   methods: {

@@ -1,9 +1,7 @@
 <template>
   <transition name="fade" mode="out-in">
     <slot>
-      <keep-alive>
-        <router-view></router-view>
-      </keep-alive>
+      <router-view></router-view>
     </slot>
   </transition>
 </template>

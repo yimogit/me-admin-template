@@ -43,7 +43,7 @@ export default {
       list: []
     }
   },
-  activated() {
+  created() {
     this.loadData()
   },
   methods: {

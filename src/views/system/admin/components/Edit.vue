@@ -31,7 +31,7 @@ export default {
       submit_loading: false
     }
   },
-  activated() {
+  created() {
     this.loadData()
   },
   methods: {
