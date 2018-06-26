@@ -19,6 +19,7 @@
         </el-button>
         <el-dropdown-menu slot="dropdown">
           <el-dropdown-item command="updatepwd">修改密码</el-dropdown-item>
+          <el-dropdown-item command="disabledTab">{{disabledTab?'启用':'禁用'}}选项卡</el-dropdown-item>
           <el-dropdown-item command="logout" divided>退出</el-dropdown-item>
         </el-dropdown-menu>
       </el-dropdown>
@@ -36,7 +37,8 @@ export default {
   },
   data() {
     return {
-      adminName: window.authInfo && window.authInfo.info.adminName
+      adminName: window.authInfo && window.authInfo.info.adminName,
+      disabledTab: localStorage.DISABLE_TAB === 'true'
     }
   },
   methods: {
@@ -45,7 +47,14 @@ export default {
       location.reload()
     },
     handleClick(e) {
-      e === 'logout' && this.logout()
+      if (e === 'disabledTab') {
+        localStorage.DISABLE_TAB = !this.disabledTab
+        location.reload()
+      } else if (e === 'logout') {
+        this.logout()
+      } else if (e === 'updatepwd') {
+        //...
+      }
     }
   }
 }

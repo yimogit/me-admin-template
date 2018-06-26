@@ -12,7 +12,7 @@
           <i :class="{'el-icon-arrow-left':!menuCollspse,'el-icon-arrow-right':menuCollspse}"></i>
         </div>
         <el-tabs v-model="currentTab" type="card" @tab-click="clickTab" @tab-remove="removeTab" class="layout-nav-tabs">
-          <el-tab-pane :label="item.tabName" :closable="true" v-for="item in pageTabs" :key="item.tabKey" :name="item.tabKey"></el-tab-pane>
+          <el-tab-pane :label="item.tabName" :closable="!disableTab" v-for="item in pageTabs" :key="item.tabKey" :name="item.tabKey"></el-tab-pane>
         </el-tabs>
         <v-app-main class="layout-main-content">
           <keep-alive v-if="router_cache">
@@ -46,7 +46,8 @@ export default {
       pageTabs: [],
       menuCollspse: window.innerWidth < 800,
       headerHeight: 50,
-      innerHeight: 0
+      innerHeight: 0,
+      disableTab: localStorage.DISABLE_TAB === 'true'
     }
   },
   watch: {
@@ -57,17 +58,19 @@ export default {
           menuUrl: this.$route.fullPath,
           menuCode: this.$route.name
         }
-        console.log(routeInfo)
+        // console.log(routeInfo)
         this.currentTab = this.$route.name
         if (this.pageTabs.find(e => e.tabKey === this.currentTab)) return
-        this.pageTabs.push({
+        var newRoute = {
           tabName: routeInfo.menuName,
           tabRoute: routeInfo.menuUrl
             ? routeInfo.menuUrl
             : { name: routeInfo.menuCode },
           tabKey: routeInfo.menuCode
-        })
-        // console.log(this.pageTabs)
+        }
+        this.disableTab
+          ? (this.pageTabs = [newRoute])
+          : this.pageTabs.push(newRoute)
       },
       immediate: true
     },
