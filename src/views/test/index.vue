@@ -1,5 +1,8 @@
 <template>
-    <div>index</div>
+    <div>
+        测试demo
+        <a href="/">控制台</a>
+    </div>
 </template>
 
 <script>

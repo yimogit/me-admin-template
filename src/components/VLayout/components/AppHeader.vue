@@ -19,7 +19,7 @@
         </el-button>
         <el-dropdown-menu slot="dropdown">
           <el-dropdown-item command="updatepwd">修改密码</el-dropdown-item>
-          <el-dropdown-item command="disabledTab">{{disabledTab?'启用':'禁用'}}选项卡</el-dropdown-item>
+          <el-dropdown-item command="disabledTab" divided>{{disabledTab?'启用':'禁用'}}选项卡</el-dropdown-item>
           <el-dropdown-item command="logout" divided>退出</el-dropdown-item>
         </el-dropdown-menu>
       </el-dropdown>

@@ -7,7 +7,7 @@
 module.exports = {
   status: 1,
   data: {
-    'rows|5': [
+    'rows|10': [
       {
         id: '@increment',
         adminName: '@cname',

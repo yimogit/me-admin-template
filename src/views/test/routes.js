@@ -17,6 +17,11 @@ export default {
       path: 'select',
       component: () => import('@/views/test/select'),
       meta: { auth: true }
+    },
+    {
+      path: 'table-pager',
+      component: () => import('@/views/test/table-pager'),
+      meta: { auth: true }
     }
   ]
 }

@@ -46,6 +46,13 @@ module.exports = {
             menuUrl: null
           }
         ]
+      },
+      {
+        menuId: 11,
+        menuName: '测试',
+        menuIcon: 'el-icon-menu',
+        menuCode: '',
+        menuUrl: '/test'
       }
     ],
     modules: [
