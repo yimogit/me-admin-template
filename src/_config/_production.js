@@ -1,3 +1,4 @@
 export default {
-  apiBaseUrl: '//api.yimo.link/api'
+  apiBaseUrl: '//api.yimo.link/api',
+  previwFileUrl: ''
 }

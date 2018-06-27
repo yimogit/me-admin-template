@@ -21,7 +21,7 @@
                 <el-button type="danger" @click="e=>this.$ui.pages.info(checkList.map(s=>s.adminName))">选择名称</el-button>
             </div>
 
-            <el-table-column type="expand">
+            <el-table-column type="expand" :resizable="false">
                 <template slot-scope="props">
                     <p>表格嵌套</p>
                     <v-table-pager :loadAction="$api.system.getAdminList">

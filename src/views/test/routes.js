@@ -22,6 +22,11 @@ export default {
       path: 'table-pager',
       component: () => import('@/views/test/table-pager'),
       meta: { auth: true }
+    },
+    {
+      path: 'upload',
+      component: () => import('@/views/test/upload'),
+      meta: { auth: true }
     }
   ]
 }

@@ -2,6 +2,7 @@ import ElementUI from 'element-ui'
 import '../assets/styles/app.css'
 import '../assets/styles/layout.css'
 import 'element-ui/lib/theme-chalk/index.css'
+import 'nprogress/nprogress.css' // Progress 进度条样式
 
 import directives from '../directives'
 import components from '../components'

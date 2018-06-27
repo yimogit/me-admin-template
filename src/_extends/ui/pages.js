@@ -1,5 +1,12 @@
 import router from '@/router'
+import config from '@/_config'
+import { Message, MessageBox } from 'element-ui'
+import NProgress from 'nprogress' // Progress 进度条
 
+//#region 提示
+export const back = _ => {
+  router.back()
+}
 export const link = route => {
   if (!route) return
   if (
@@ -52,8 +59,33 @@ export const confirm = (content, opt) => {
 }
 
 function _currentMessage(opt) {
-  return window.__currentApp.$message(opt)
+  return Message(opt)
+  // return window.__currentApp.$message(opt)
 }
 function _currentConfirm(content, title, opt) {
-  return window.__currentApp.$confirm(content, title, opt)
+  return MessageBox.confirm(content, title, opt)
+  // return window.__currentApp.$confirm(content, title, opt)
 }
+
+//#endregion
+
+//#region 进度条
+
+export function showProgress() {
+  NProgress.start()
+}
+export function hideProgress() {
+  NProgress.done()
+}
+
+//#endregion
+
+//#region 辅助方法
+
+export function getDownloadUrl(imgUrl) {
+  if (imgUrl || imgUrl.indexOf('http') === 0 || imgUrl.indexOf('//') === 0) {
+    return imgUrl
+  }
+  return config.previwFileUrl + imgUrl
+}
+//#endregion

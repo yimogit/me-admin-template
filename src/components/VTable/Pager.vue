@@ -1,9 +1,9 @@
 <template>
   <div class="custom-table">
     <el-table :data="tableData.rows" v-loading="loading" style="width: 100%" :height="tableHeight" element-loading-text="拼命加载中" border ref="mytable" @selection-change="on_selection_change" @sort-change="on_sort_change" :default-expand-all="defaultExpandAll" :highlight-current-row="!!radioKey" @current-change="handle_current_change">
-      <el-table-column v-if="showCheckbox" type="selection" width="40">
+      <el-table-column v-if="showCheckbox" type="selection" width="40" :resizable="false">
       </el-table-column>
-      <el-table-column v-if="radioKey" width="40">
+      <el-table-column v-if="radioKey" width="40" :resizable="false">
         <template slot-scope="prop">
           <el-radio v-model="radio_index" :label="prop.$index" class="custom-table-radio">
           </el-radio>

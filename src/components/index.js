@@ -10,6 +10,8 @@ import VPickerSelect from './VPicker/Select'
 import VTablePager from './VTable/Pager'
 import VTableTree from './VTable/Tree'
 
+import VUploadSingle from './VUpload/Single'
+
 export default {
   VBtnAuth,
   VBtnCreate,
@@ -18,5 +20,6 @@ export default {
   VFormInput,
   VPickerSelect,
   VTablePager,
-  VTableTree
+  VTableTree,
+  VUploadSingle
 }
