@@ -12,42 +12,22 @@
 
 </template>
 <script>
+import Upload from './mixins/upload'
 export default {
+  mixins: [Upload],
   props: {
-    value: {
-      type: String
-    },
-    category: {
-      type: String,
-      default: 'uploader'
-    },
-    accept: {
-      type: String
-    },
-    isFile: {
-      type: Boolean
-    },
+    value: String,
     styleName: {
       type: String,
       default: 'width:100px;height:100px;line-height:100px;'
     },
-    className: {
-      type: String,
-      default: ''
-    },
-    maxSize: {
-      type: Number,
-      default: 5
-    }
+    className: String
   },
   data() {
     return {
       classValue: this.className + ' single-img',
-      acceptValue: !this.isFile && !this.accept ? 'image/*' : this.accept,
       prewiewUrl: '',
-      imageUrl: '',
-      formName: 'files',
-      uploadAction: this.$api.common.upload
+      imageUrl: ''
     }
   },
   created() {
@@ -64,13 +44,6 @@ export default {
     }
   },
   methods: {
-    beforeUpload(file) {
-      const isLt = file.size / 1024 / 1024 < this.maxSize
-      if (!isLt) {
-        this.$ui.pages.error('上传文件大小不能超过 ' + this.maxSize + 'MB!')
-      }
-      return isLt
-    },
     uploadImg(e) {
       const _this = this
       _this.$ui.pages.showProgress()
@@ -84,7 +57,7 @@ export default {
           }
           _this.imageUrl = res.data.filePath // 监听的value会自动更新
           _this.$emit('input', _this.imageUrl)
-          _this.$emit('change', _this.res.data)
+          _this.$emit('change', res.data)
           _this.$ui.pages.hideProgress()
         })
         .catch(() => {
@@ -94,7 +67,6 @@ export default {
     handleRemove() {
       this.imageUrl = ''
       this.$emit('input', this.imageUrl)
-      this.$emit('change', null)
     }
   }
 }

@@ -1,7 +1,6 @@
 <template>
     <div>
-        测试demo
-        <a href="/">控制台</a>
+        <a href="/">返回控制台</a>
     </div>
 </template>
 

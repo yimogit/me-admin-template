@@ -1,12 +1,12 @@
 <template>
-    <div>
-        <ul class="nav">
-            <li :class="{'active':$route.path==='/test/'+item.path}" v-for="item in navs" :key="item.path" @click="open(item)">{{item.path}}</li>
-        </ul>
-        <div class="main" :style="contentStyle">
-            <router-view />
-        </div>
+  <div>
+    <ul class="nav">
+      <li :class="{'active':$route.path==='/test/'+item.path}" v-for="item in navs" :key="item.path" @click="open(item)">{{item.path}}</li>
+    </ul>
+    <div class="main" :style="contentStyle">
+      <router-view />
     </div>
+  </div>
 </template>
 
 <script>
@@ -66,6 +66,7 @@ ul.nav {
   clear: both;
   border: 1px solid #5db9a5;
   padding: 5px;
+  overflow: auto;
 }
 </style>
 
