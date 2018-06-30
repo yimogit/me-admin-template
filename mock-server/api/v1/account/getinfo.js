@@ -13,24 +13,24 @@ module.exports = {
     },
     menus: [
       {
-        menuId: 1,
+        menuId: '@increment',
         menuName: '控制台',
         menuIcon: 'el-icon-menu',
         menuCode: 'home',
         menuUrl: null
       },
       {
-        menuId: 2,
+        menuId: '@increment',
         menuName: '系统管理',
         menuIcon: 'el-icon-setting',
         children: [
           {
-            menuId: 3,
+            menuId: '@increment',
             menuName: '管理员管理',
             menuIcon: 'null',
             children: [
               {
-                menuId: 4,
+                menuId: '@increment',
                 menuName: '管理员列表',
                 menuIcon: null,
                 menuCode: 'system_admin_list',
@@ -39,7 +39,7 @@ module.exports = {
             ]
           },
           {
-            menuId: 6,
+            menuId: '@increment',
             menuName: '角色列表',
             menuIcon: null,
             menuCode: 'system_role_list',
@@ -48,7 +48,28 @@ module.exports = {
         ]
       },
       {
-        menuId: 11,
+        menuId: '@increment',
+        menuName: '组件',
+        menuIcon: 'el-icon-menu',
+        children: [
+          {
+            menuId: '@increment',
+            menuName: '下拉框',
+            menuIcon: null,
+            menuCode: '',
+            menuUrl: '/test/select'
+          },
+          {
+            menuId: '@increment',
+            menuName: '上传',
+            menuIcon: null,
+            menuCode: '',
+            menuUrl: '/test/upload'
+          }
+        ]
+      },
+      {
+        menuId: '@increment',
         menuName: '测试',
         menuIcon: 'el-icon-menu',
         menuCode: '',
