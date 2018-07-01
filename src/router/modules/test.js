@@ -1,3 +1,4 @@
+//process.env.LOAD_TEST_ROUTER === true 才挂载
 export default {
   path: '/test',
   redirect: '/test/index',

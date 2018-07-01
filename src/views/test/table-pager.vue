@@ -81,7 +81,26 @@ export default {
     submitCallback(result) {
       this.editDialog.show = false
       if (!result) return
-      this.loadData()
+      this.$refs.mytable.loadData()
+      return new Promise((resolve, reject) => {
+        resolve(
+          require('mockjs-lite').mock({
+            status: 1,
+            data: {
+              'rows|10': [
+                {
+                  id: '@increment',
+                  adminName: '@cname',
+                  isEnable: '@boolean()',
+                  createdAt: '@datetime',
+                  'roleIds|1-3': [1, 2, 3]
+                }
+              ],
+              total: 30
+            }
+          })
+        )
+      })
     },
     delAdmin(id) {
       this.$ui.pages.confirm('确认删除？').then(res => {

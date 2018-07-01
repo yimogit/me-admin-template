@@ -1,6 +1,6 @@
 <template>
     <div>
-        <a href="/">返回控制台</a>
+        <router-link to="/">返回控制台</router-link>
     </div>
 </template>
 

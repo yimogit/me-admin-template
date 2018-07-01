@@ -67,7 +67,7 @@ export default {
     submitCallback(result) {
       this.editDialog.show = false
       if (!result) return
-      this.loadData()
+      this.$refs.mytable.loadData()
     },
     delAdmin(id) {
       this.$ui.pages.confirm('确认删除？').then(res => {

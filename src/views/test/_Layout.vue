@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import routes from './routes'
+import routes from '@/router/modules/test'
 export default {
   data() {
     return {
