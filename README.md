@@ -42,3 +42,8 @@
 
 - 2018-06-16: 引入 element-ui
 - 2018-05-03: 基础框架搭建
+
+## 框架效果预览
+
+[整容前](https://user-gold-cdn.xitu.io/2018/8/11/165291278ea146d1)
+[整容后](https://user-gold-cdn.xitu.io/2018/8/11/1652912db78bd206)
