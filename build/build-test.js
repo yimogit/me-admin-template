@@ -51,7 +51,13 @@ function copyTask() {
       config.build.assetsSubDirectory,
       'fonts'
     ),
-    path.join(config.build.assetsRoot, config.build.assetsSubDirectory, 'css')
+    path.join(
+      config.build.assetsRoot,
+      config.build.assetsSubDirectory,
+      'css',
+      'static'，
+      'fonts'
+    )
   )
   cp(
     '-R',
