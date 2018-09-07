@@ -9,7 +9,15 @@ module.exports = {
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {},
+    proxyTable: {
+      '/apidomain': {
+        target: 'http://localhost:6543', //或ip或域名。
+        changeOrigin: true,
+        pathRewrite: {
+          '^/apidomain': ''
+        }
+      }
+    },
 
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST

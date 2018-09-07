@@ -4,6 +4,7 @@ import VBtnEdit from './VButton/Edit'
 import VBtnDel from './VButton/Del'
 
 import VFormInput from './VForm/Input'
+import VFormEditor from './VForm/Editor'
 
 import VPickerSelect from './VPicker/Select'
 
@@ -19,6 +20,7 @@ export default {
   VBtnEdit,
   VBtnDel,
   VFormInput,
+  VFormEditor,
   VPickerSelect,
   VTablePager,
   VTableTree,

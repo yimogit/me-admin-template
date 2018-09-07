@@ -5,7 +5,7 @@
   "author": "yimo <1280160831@qq.com>",
   "private": true,
   "scripts": {
-    "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js --host 0.0.0.0",
+    "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js  --port 5555 --host 0.0.0.0",
     "start": "npm run dev",
     "unit": "jest --config test/unit/jest.conf.js --coverage",
     "test": "node test/custom/index.js",
@@ -21,7 +21,9 @@
     "nprogress": "^0.2.0",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1",
-    "vuex": "^3.0.1"
+    "vuex": "^3.0.1",
+    "wangeditor": "^2.1.23",
+    "xss": "^0.3.8"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",

@@ -1,5 +1,6 @@
 export default {
-  apiBaseUrl: 'http://localhost:6543/api',
+  apiBaseUrl: '/apidomain/api',
+  // apiBaseUrl: 'http://localhost:6543/api',
   previwFileUrl: '',
   isMockTest: true
 }

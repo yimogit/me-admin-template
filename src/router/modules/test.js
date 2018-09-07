@@ -27,7 +27,12 @@ export default {
     {
       path: 'upload',
       component: () => import('@/views/test/upload'),
-      meta: { auth: true }
+      meta: { auth: false }
+    },
+    {
+      path: 'editor',
+      component: () => import('@/views/test/editor'),
+      meta: { auth: false }
     }
   ]
 }

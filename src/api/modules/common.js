@@ -1,4 +1,5 @@
 import request from '../fetch'
+import config from '@/_config'
 
 export function getInfo() {
   return request({
@@ -6,7 +7,9 @@ export function getInfo() {
     method: 'get'
   })
 }
-
+export function getUploadUrl() {
+  return config.apiBaseUrl + '/v1/common/upload'
+}
 export function upload(formData, category) {
   if (category) {
     formData.append('category', category)
