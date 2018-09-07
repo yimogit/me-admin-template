@@ -55,7 +55,7 @@ function copyTask() {
       config.build.assetsRoot,
       config.build.assetsSubDirectory,
       'css',
-      'static'，
+      'static',
       'fonts'
     )
   )
