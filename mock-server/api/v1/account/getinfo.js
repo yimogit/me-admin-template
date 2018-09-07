@@ -54,6 +54,13 @@ module.exports = {
         children: [
           {
             menuId: '@increment',
+            menuName: '权限按钮',
+            menuIcon: null,
+            menuCode: '',
+            menuUrl: '/test/button'
+          },
+          {
+            menuId: '@increment',
             menuName: '下拉框',
             menuIcon: null,
             menuCode: '',
@@ -61,10 +68,24 @@ module.exports = {
           },
           {
             menuId: '@increment',
+            menuName: '表格',
+            menuIcon: null,
+            menuCode: '',
+            menuUrl: '/test/table-pager'
+          },
+          {
+            menuId: '@increment',
             menuName: '上传',
             menuIcon: null,
             menuCode: '',
             menuUrl: '/test/upload'
+          },
+          {
+            menuId: '@increment',
+            menuName: '编辑器',
+            menuIcon: null,
+            menuCode: '',
+            menuUrl: '/test/editor'
           }
         ]
       },
