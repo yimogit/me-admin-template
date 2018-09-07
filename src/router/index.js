@@ -5,7 +5,7 @@ import logic from './logic'
 Vue.use(Router)
 
 const router = new Router({
-  // mode: 'history',
+  mode: localStorage.IS_HISTORY_MODE ? 'history' : 'hash',
   scrollBehavior(to, from, savedPosition) {
     if (savedPosition) return savedPosition
     const position = {}
