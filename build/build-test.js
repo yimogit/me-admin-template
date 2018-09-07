@@ -46,21 +46,6 @@ rm(path.join(config.build.assetsRoot, config.build.assetsSubDirectory), err => {
 function copyTask() {
   cp(
     '-R',
-    path.join(
-      config.build.assetsRoot,
-      config.build.assetsSubDirectory,
-      'fonts'
-    ),
-    path.join(
-      config.build.assetsRoot,
-      config.build.assetsSubDirectory,
-      'css',
-      'static',
-      'fonts'
-    )
-  )
-  cp(
-    '-R',
     path.join(config.build.assetsRoot, 'index.html'),
     path.join(config.build.assetsRoot, '404.html')
   )

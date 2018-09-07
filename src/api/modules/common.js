@@ -8,7 +8,7 @@ export function getInfo() {
   })
 }
 export function getUploadUrl() {
-  return config.apiBaseUrl + '/v1/common/upload'
+  return config.apiBaseUrl + '/v1/common/upload' + (_config.suffix || '')
 }
 export function upload(formData, category) {
   if (category) {

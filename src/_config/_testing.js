@@ -1,6 +1,6 @@
 export default {
   isMockTest: true,
-  apiBaseUrl: './api-test-data/api',
+  apiBaseUrl: '/api-test-data/api',
   previwFileUrl: '',
   suffix: '.json'
 }
