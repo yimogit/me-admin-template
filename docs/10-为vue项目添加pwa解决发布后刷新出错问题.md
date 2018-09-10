@@ -17,7 +17,7 @@ npm 安装
 
 ```
 npm install sw-precache-webpack-plugin --dev-dev
-npm add uglify-es --dev-dev
+npm install uglify-es --dev-dev
 ```
 
 ## build 目录添加相关配置
