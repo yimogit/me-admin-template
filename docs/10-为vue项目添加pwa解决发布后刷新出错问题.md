@@ -165,5 +165,19 @@ new SWPrecacheWebpackPlugin({
 })
 ```
 
+### 在 index.html 中注入 service-worker.js
+```
+<%= htmlWebpackPlugin.options.serviceWorkerLoader %>
+```
+如下所示
+```
+
+<body>
+  <div id="app"></div>
+  <%= htmlWebpackPlugin.options.serviceWorkerLoader %>
+  <!-- built files will be auto injected -->
+</body>   
+```
+
 至此，添加完毕，build 之后查看缓存中是否包含 js 检验结果
 ![图片](https://dn-coding-net-production-pp.qbox.me/a565c7ff-7642-4491-bb5f-4c0da44ae537.png)
