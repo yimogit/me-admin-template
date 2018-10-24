@@ -6,6 +6,12 @@ const beforeEach = (to, from, next) => {
   if (!localStorage.token) {
     return next('/login')
   }
+  //无权限访问
+  if (!window.authInfo 
+      || !window.authInfo.modules 
+      || window.authInfo.modules.indexOf(to.name)===-1) {
+    return next('/login')
+  }
   if (window.authInfo && window.authInfo.info) return next()
   getInfo().then(res => {
     localStorage.token = res.data.info.token
