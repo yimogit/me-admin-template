@@ -6,13 +6,7 @@ const beforeEach = (to, from, next) => {
   if (!localStorage.token) {
     return next('/login')
   }
-  //无权限访问
-  if (!window.authInfo 
-      || !window.authInfo.modules 
-      || window.authInfo.modules.indexOf(to.name)===-1) {
-    return next('/login')
-  }
-  if (window.authInfo && window.authInfo.info) return next()
+  if (checkAuth(to.name)) return next()
   getInfo().then(res => {
     localStorage.token = res.data.info.token
     window.authInfo = {
@@ -20,10 +14,14 @@ const beforeEach = (to, from, next) => {
       menus: res.data.menus,
       modules: res.data.modules
     }
-    next()
+    checkAuth(to.name) ? next():next('/login')
   })
 }
 const afterEach = (to, from) => {}
+
+function checkAuth(code){
+  return window.authInfo && window.authInfo.info && window.authInfo.modules.indexOf(to.name)>-1
+}
 
 export default {
   beforeEach,
