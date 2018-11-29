@@ -1,5 +1,8 @@
 import { getInfo } from '@/api/modules/account'
+import NProgress from 'nprogress' // Progress 进度条
+import 'nprogress/nprogress.css' // Progress 进度条样式
 const beforeEach = (to, from, next) => {
+  NProgress.start()
   if (!to.meta.auth) {
     return next()
   }
@@ -7,7 +10,7 @@ const beforeEach = (to, from, next) => {
     return next('/login')
   }
   //测试登录即可
-  if(to.path.indexOf('/test')==0){
+  if (to.path.indexOf('/test') === 0) {
     return next()
   }
   if (checkAuth(to.name)) return next()
@@ -18,13 +21,19 @@ const beforeEach = (to, from, next) => {
       menus: res.data.menus,
       modules: res.data.modules
     }
-    checkAuth(to.name) ? next():next('/login')
+    checkAuth(to.name) ? next() : next('/login')
   })
 }
-const afterEach = (to, from) => {}
+const afterEach = (to, from) => {
+  NProgress.done()
+}
 
-function checkAuth(code){
-  return window.authInfo && window.authInfo.modules&& window.authInfo.modules.indexOf(code)>-1
+function checkAuth(code) {
+  return (
+    window.authInfo &&
+    window.authInfo.modules &&
+    window.authInfo.modules.indexOf(code) > -1
+  )
 }
 
 export default {
