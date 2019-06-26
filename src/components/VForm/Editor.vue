@@ -250,7 +250,7 @@ export default {
             '<button class="el-button el-button--danger el-button--small">重置</button>'
           )
           var $cancelButton = $(
-            '<button <button class="el-button el-button--default el-button--small">取消</button>'
+            '<button class="el-button el-button--default el-button--small">取消</button>'
           )
           $buttonContainer.append($okButton)
           $buttonContainer.append($clearButton)
