@@ -4,8 +4,6 @@
 
 > 一个基于 vue-cli 的后台模板框架,以期构建一个可以快速使用的简单后台模板
 
-[![Build Status](https://travis-ci.org/yimogit/yimo-editor.svg?branch=master)](https://travis-ci.org/yimogit/yimo-editor)
-
 ## 命令说明
 
 - `npm run mock` 启动测试接口服务器
