@@ -4,6 +4,8 @@
 
 > 一个基于 vue-cli 的后台模板框架,以期构建一个可以快速使用的简单后台模板
 
+[![Build Status](https://travis-ci.org/yimogit/yimo-editor.svg?branch=master)](https://travis-ci.org/yimogit/yimo-editor)
+
 ## 命令说明
 
 - `npm run mock` 启动测试接口服务器
@@ -30,7 +32,6 @@
 - [x] [前后端分离后权限的实现](./docs/08-前后端分离后权限的实现.md)
 - [x] [封装通用操作,解耦组件](./docs/09-封装通用操作以期解耦组件.md)
 - [x] 集成 element-ui
-- 手写一个代码生成器构建基础的 CURD 前端代码
 
 ## 项目参考
 
@@ -45,5 +46,10 @@
 
 ## 框架效果预览
 
-[整容前](https://user-gold-cdn.xitu.io/2018/8/11/165291278ea146d1)
-[整容后](https://user-gold-cdn.xitu.io/2018/8/11/1652912db78bd206)
+### 整容前
+
+![](./docs/images/zrq.png)
+
+### 整容后
+
+![](./docs/images/zrh.jpg)
