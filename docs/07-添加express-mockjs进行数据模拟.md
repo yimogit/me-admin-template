@@ -11,6 +11,7 @@
 ### 安装 express-mockjs 到项目
 
 安装 express-mockjs(v0.4.9): `npm install express-mockjs --save-dev`
+安装 express(v4.17.1): `npm install express --save-dev`
 
 ### 安装 nodemon 到项目 以监听 mock 代码修改
 
